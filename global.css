@@ -1,0 +1,77 @@
+/* max width */
+#login_cont, .main_body { max-width: 480px;}
+.main_profile {  max-width: 460px;}
+
+/* Login style */
+a { color: #00ffcc; -webkit-tap-highlight-color: rgba(255, 255, 255, 0);}
+a:hover { color: #000;}
+.tabn a:hover { color: #fff;}
+body { background: url('imgs/wall4.png') repeat;}
+#login_cont { width: 100%; margin: 0 auto;}
+#login { float: left; width: 90%; padding: 20px 5% 0px;}
+#login div { overflow: hidden; width: 100%; float: left; margin: 0px 0px 0px 0px;}
+#login label { font-size: 14px; cursor: text; float: left; position: absolute; color: #444; opacity: 0; margin: 11px 0px 0px 15px;}
+#login input { font-size: 14px; float: left; outline: none; border: none; background: #aaa; width: 100%; height: 20px; border-left: 0px solid #666; padding: 10px 0px 10px 10px; margin: 0px 0px 10px 0px; -webkit-focus-ring-color: none!important; -webkit-appearance: none!important;-webkit-box-flex: 1; -webkit-box-shadow: none; -webkit-border-radius: 0;-webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+#login input:focus { border-left: 0px solid #00ffcc; -webkit-focus-ring-color: none!important; -webkit-appearance: none!important;-webkit-box-flex: 1; -webkit-box-shadow: none; -webkit-border-radius: 0;-webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+#login input#send { width: 100%; float: left; background: #999; color: #fff; cursor: pointer; font-weight: bold; padding: 10px 20px; height: 50px;}
+#login input#send:hover { background: #666; border-left: 0px solid #00ffcc;}
+#login div#result { margin: 5px auto; }
+#login div.response { margin: 3px; background: #F7C7AC; width: 91%; padding: 8px 9px 8px 12px;}
+#login .loader { margin-left: 47%;}
+h1 {
+font-family: 'Lato', sans-serif; 
+width: auto; font-size: 31px;
+font-weight:200; text-align: center;
+}
+
+.nav {
+	position: fixed;
+	height: 50px;
+	width: 100%;
+	max-width: 480px;
+	bottom: 0;
+}
+.nav a { width: 50%; height: 50px; background: #222;
+	font-family: 'Lato', sans-serif; font-size: auto;
+font-weight:200; float: left; text-decoration: none;
+font-size: 30px;
+}
+.nav a span {
+	margin: 0 auto; width: 50%; display: block; text-align: center;
+}
+.nav a:hover { color: #fff; background: #333;}
+.nav a.active { background: #444; color: #fff;}
+
+.canimg { max-height: 100px!important; overflow: hidden; width: 100%; float: left;}
+.canimg img { width: 35%; margin-left: 32%;}
+.canname { width: 100%; height: 40px;
+	font-family: 'Lato', sans-serif; font-size: auto;
+font-weight:400; float: left; text-decoration: none;
+font-size: 30px; text-align: center;
+}
+.cand { width: 100%; float: left;}
+.cand a { color: #000;float: left; width: 100%;}
+.ca { border-top: 5px solid #b02f34; background: #CA323A;}
+.cb { border-top: 5px solid #b02f34; background: #CA323A;}
+.cc { border-top: 5px solid #b02f34; background: #CA323A;}
+.votep { max-height: 700px; overflow: hidden;}
+.votep h1 {  margin: 20px 0px; height: 28px;}
+.arrow-top { 
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+}
+.votep .arrow-top { float: left; margin-top:-10px; margin-left: 23%;}
+
+.profile {}
+.profile img {
+	width: 50%;
+	float: left;
+}
+.pname { float: left;}
+
+
+
+
+
+
