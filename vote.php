@@ -34,7 +34,7 @@ else{
 		<a href="profile.php?id=3">
 			<div class="canname">Mickey Mouse</div>
 			<div class="canimg">
-				<img src="imgs/mickey.png" />
+				<img src="imgs/mickey.png" /><br />
 			</div>
 		</a>
 	</div>
@@ -42,7 +42,7 @@ else{
 		<a href="profile.php?id=1">
 			<div class="canname">Bugs Bunny</div>
 			<div class="canimg">
-				<img src="imgs/bugs.png" />
+				<img src="imgs/bugs.png" /><br />
 			</div>
 		</a>
 	</div>
@@ -50,7 +50,7 @@ else{
 		<a href="profile.php?id=2">
 			<div class="canname">Pluto</div>
 			<div class="canimg">
-				<img src="imgs/mickey.png" />
+				<img src="imgs/mickey.png" /><br />
 			</div>
 		</a>
 	</div>
@@ -59,6 +59,7 @@ else{
 		<a class="vote active" href="vote.php"><span>Vote</span></a>
 		<a class="results" href="results.php"><span>Results</span></a>
 		<div class="arrow-top"></div>
+		<div class="arrow-bottom"><p>derp</p></div>
 	</div>	
 </div>
 
