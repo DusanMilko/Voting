@@ -25,7 +25,7 @@ else{
 <script type="text/javascript" src="http://dusanmilko.com/js/jquery-1.7.2.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css' />
 </head>
-<body id="body" >
+<body id="body">
 
 <div id="login_cont" class="votep">
 	<h1>TOONTOWN VOTING</h1>
@@ -55,12 +55,12 @@ else{
 		</a>
 	</div>
 	
-	<div class="nav">
+	<nav class="nav">
 		<a class="vote active" href="vote.php"><span>Vote</span></a>
 		<a class="results" href="results.php"><span>Results</span></a>
 		<div class="arrow-top"></div>
 		<div class="arrow-bottom"><p>derp</p></div>
-	</div>	
+	</nav>	
 </div>
 
 <script>	
