@@ -22,7 +22,10 @@ $stmt->bind_result( $name, $imge, $descri );
 <script type="text/javascript" src="http://dusanmilko.com/js/jquery-1.7.2.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css' />
 </head>
-
+<!--Preheat oven to 325 degrees F (165 degrees C).
+In a large bowl, combine cream cheese, sugar and vanilla. Beat until smooth. Blend in eggs one at a time. Remove 1 cup of batter and spread into bottom of crust; set aside.
+Add pumpkin, cinnamon, cloves and nutmeg to the remaining batter and stir gently until well blended. Carefully spread over the batter in the crust.
+Bake in preheated oven for 35 to 40 minutes, or until center is almost set. Allow to cool, then refrigerate for 3 hours or overnight. Cover with whipped topping before serving.-->
 <body id="body" >
 	
 	<?php while( $row = $stmt->fetch()) : ?>
@@ -34,12 +37,12 @@ $stmt->bind_result( $name, $imge, $descri );
 			<img src="<?php echo $imge;?>" />
 			<div class="pname"><?php echo $name;?></div>
 			<div class="desc"><?php echo $descri;?></div>
-			<a href="">Cast Vote</a>
+			<p><a href="">Cast Vote</a></p>
 		</div>
 		
 		<div class="nav">
 			<a class="vote active" href="vote.php"><span>Vote</span></a>
-			<a class="results" href="results.php"><span>Results</span></a>
+			<a class="results" href="results.php"><span>Results</span></a><!--Works if user is registered-->
 			<div class="arrow-top"></div>
 		</div>	
 		
