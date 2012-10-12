@@ -12,12 +12,16 @@ while( $row = $stmt->fetch()) : ?>
 	$on = 1;
 	$quan = intval($quan);
 	if( $quan == 1 ){
-		echo '<script>window.location.href = "result.php";</script>';
+		echo '<script>window.location.href = "result.php";</script>'; //if registered
 	}else if( $quan == 0 ){
-		echo '<script>window.location.href = "vote.php";</script>';
+		echo '<script>window.location.href = "vote.php";</script>'; //if not registered
 	}else{
 		echo "Not a Valid Voter Id";
 	}
+
+	while(1) {
+        	print "In loop!\n";
+    	}
 ?>
 
 <?php endwhile; ?>
