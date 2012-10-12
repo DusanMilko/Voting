@@ -36,9 +36,15 @@ else{
 				<label for="usern">Voter ID</label> 
 				<input type="text" name="usern" id="usern" /> 
 			</div> 
+			
 
 			<input type="submit" id="send" value="Log In" name="submit" />
 	</form>
+	
+	<div id="forgot">
+		<a href="#">forgot username</a>
+		<a href="#">forgot password</a>
+	</div>
 	
 	</div> 
 
