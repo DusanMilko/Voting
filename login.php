@@ -1,14 +1,17 @@
 <?php
 session_start();
-if ( $_GET['status'] == "loggedout" ) {
+
+$out = stripcslashes($_GET['out']);
+if ( $out == "yes" ) {
 	session_destroy();
 }
-else{
-	if (isset($_SESSION['nm']) ) {
+else {}
+
+if (isset($_SESSION['nm']) ) {
 	header("location: vote.php");
-	}
-	else {}
 }
+else {}
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -36,15 +39,9 @@ else{
 				<label for="usern">Voter ID</label> 
 				<input type="text" name="usern" id="usern" /> 
 			</div> 
-			
 
 			<input type="submit" id="send" value="Log In" name="submit" />
 	</form>
-	
-	<div id="forgot">
-		<a href="#">forgot username</a>
-		<a href="#">forgot password</a>
-	</div>
 	
 	</div> 
 

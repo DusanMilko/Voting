@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (isset($_SESSION['nm']) ) {
+
+}
+else {
+	header("location: login.php");
+}
+
 $id = intval(stripcslashes($_GET['id']));
 
 $mysql = new mysqli('internal-db.s93477.gridserver.com','db93477_bot','troll1337','db93477_panther') or die('Error connecting to database');
@@ -22,35 +30,54 @@ $stmt->bind_result( $name, $imge, $descri );
 <script type="text/javascript" src="http://dusanmilko.com/js/jquery-1.7.2.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css' />
 </head>
-<!--Preheat oven to 325 degrees F (165 degrees C).
-In a large bowl, combine cream cheese, sugar and vanilla. Beat until smooth. Blend in eggs one at a time. Remove 1 cup of batter and spread into bottom of crust; set aside.
-Add pumpkin, cinnamon, cloves and nutmeg to the remaining batter and stir gently until well blended. Carefully spread over the batter in the crust.
-Bake in preheated oven for 35 to 40 minutes, or until center is almost set. Allow to cool, then refrigerate for 3 hours or overnight. Cover with whipped topping before serving.-->
+
 <body id="body" >
 	
 	<?php while( $row = $stmt->fetch()) : ?>
 	
 	<div id="login_cont" class="prof">
-		<h1>TOONTOWN VOTING</h1>
+		<a class="tit" href="vote.php"><h1>TOONTOWN VOTING</h1></a>
 		
-		<div class="profile">
-			<img src="<?php echo $imge;?>" />
-			<div class="pname"><?php echo $name;?></div>
-			<div class="desc"><?php echo $descri;?></div>
-			<p><a href="">Cast Vote</a></p>
+		<div class="candpof">
+			<div class="profile">
+				<img src="<?php echo $imge;?>" />
+				<div class="pname"><?php echo $name;?></div>
+				<div class="desc"><?php echo $descri;?></div>
+				<a class="button orange" href="">Cast Vote</a>
+			</div>
+			
+			<div class="nav">
+				<a class="vote" href="vote.php"><span>Vote</span></a>
+				<a class="results" href="results.php"><span>Results</span></a>
+				<div class="arrow-top"></div>
+				<a class="log" href="login.php?out=yes"><span>LogOut</span></a>
+			</div>	
+			<div id="result"></div>
 		</div>
-		
-		<div class="nav">
-			<a class="vote active" href="vote.php"><span>Vote</span></a>
-			<a class="results" href="results.php"><span>Results</span></a><!--Works if user is registered-->
-			<div class="arrow-top"></div>
-		</div>	
-		
 	</div> 
 
 	<?php endwhile; ?>
 
 <script>
+$(document).ready(function(){
+	var newh = Math.ceil(($(window).height() - 68));
+	$('.candpof').height(newh);
+	
+	//Ajax
+	$.ajaxSetup ({  
+        cache: false  
+    });  
+    var ajax_load = "<img class='hid loader' src='imgs/ajax-loader.gif' alt='loading...' />"; 
+	$(".profile a").click(function(){
+    	var loadUrl = "castvote.php?cand="+<?php echo $id;?>+"&user="+<?php echo $_SESSION['nm'];?>;
+        $("#result").html(ajax_load).load(loadUrl); 
+        return false;
+    });
+});
+$(window).resize(function() {
+	var newh = Math.ceil(($(window).height() - 68));
+	$('.candpof').height(newh);
+});
 </script>
 	
 </body>

@@ -1,27 +1,26 @@
 <?php
 session_start();
-$nm = intval(stripcslashes($_GET['nm']));
+$nm = stripcslashes($_GET['nm']);
+$_SESSION['nm'] = $nm;
+$nm = intval($nm);
 $mysql = new mysqli('internal-db.s93477.gridserver.com','db93477_bot','troll1337','db93477_panther') or die('Error connecting to database');
 $stmt = $mysql->prepare('SELECT submit FROM voterid WHERE vid='.$nm.'') or die("Problem with Query");
 $stmt->execute();
 $stmt->bind_result( $quan );
 $on = 0;
+
 while( $row = $stmt->fetch()) : ?>
 		
 <?php 
 	$on = 1;
 	$quan = intval($quan);
 	if( $quan == 1 ){
-		echo '<script>window.location.href = "result.php";</script>'; //if registered
+		echo '<script>window.location.href = "results.php";</script>';
 	}else if( $quan == 0 ){
-		echo '<script>window.location.href = "vote.php";</script>'; //if not registered
+		echo '<script>window.location.href = "vote.php";</script>';
 	}else{
 		echo "Not a Valid Voter Id";
 	}
-
-	while(1) {
-        	print "In loop!\n";
-    	}
 ?>
 
 <?php endwhile; ?>

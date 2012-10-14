@@ -1,14 +1,13 @@
 <?php
 session_start();
-if ( $_GET['status'] == "loggedout" ) {
-	session_destroy();
+
+if (isset($_SESSION['nm']) ) {
+
 }
-else{
-	if (isset($_SESSION['nm']) ) {
+else {
 	header("location: login.php");
-	}
-	else {}
 }
+
 ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -25,16 +24,16 @@ else{
 <script type="text/javascript" src="http://dusanmilko.com/js/jquery-1.7.2.min.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css' />
 </head>
-<body id="body">
+<body id="body" >
 
 <div id="login_cont" class="votep">
-	<h1>TOONTOWN VOTING</h1>
+	<a class="tit" href="vote.php"><h1>TOONTOWN VOTING</h1></a>
 	
 	<div class="cand ca">
 		<a href="profile.php?id=3">
 			<div class="canname">Mickey Mouse</div>
 			<div class="canimg">
-				<img src="imgs/mickey.png" /><br />
+				<img src="imgs/mickey.png" />
 			</div>
 		</a>
 	</div>
@@ -42,7 +41,7 @@ else{
 		<a href="profile.php?id=1">
 			<div class="canname">Bugs Bunny</div>
 			<div class="canimg">
-				<img src="imgs/bugs.png" /><br />
+				<img src="imgs/bugs.png" />
 			</div>
 		</a>
 	</div>
@@ -50,35 +49,33 @@ else{
 		<a href="profile.php?id=2">
 			<div class="canname">Pluto</div>
 			<div class="canimg">
-				<img src="imgs/mickey.png" /><br />
+				<img src="imgs/pluto.png" />
 			</div>
 		</a>
 	</div>
 	
-	<nav class="nav">
+	<div class="nav">
 		<a class="vote active" href="vote.php"><span>Vote</span></a>
 		<a class="results" href="results.php"><span>Results</span></a>
 		<div class="arrow-top"></div>
-		<div class="arrow-bottom"><p>derp</p></div>
-	</nav>	
+		<a class="log" href="login.php?out=yes"><span>LogOut</span></a>
+	</div>	
 </div>
 
 <script>	
 $(document).ready(function(){
-	var newh = Math.ceil(($(window).height() - 135)/3);
-	if( newh > 200 ){ newh = 200; }
+	var newh = Math.ceil(($(window).height() - 160)/3);
+	if( newh < 100 ){ newh = 100; }
 	$('.cand').height(newh);
-	var newhimg = newh-40;
-	if( newhimg > 100 ){ newhimg = 100; }
-	$('.canimg').height(newhimg);
+	var newhimg = newh;
+	//$('.canimg').height(newhimg);
 });
 $(window).resize(function() {
-	var newh = Math.ceil(($(window).height() - 135)/3);
-	if( newh > 200 ){ newh = 200; }
+	var newh = Math.ceil(($(window).height() - 160)/3);
+	if( newh < 100 ){ newh = 100; }
 	$('.cand').height(newh);
-	var newhimg = newh-40;
-	if( newhimg > 100 ){ newhimg = 100; }
-	$('.canimg').height(newhimg);
+	var newhimg = newh;
+	//$('.canimg').height(newhimg);
 });
 </script>
 	
