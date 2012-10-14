@@ -11,7 +11,7 @@ img { display: none; }
 a { color: #00ffcc; -webkit-tap-highlight-color: rgba(255, 255, 255, 0);}
 a:hover { color: #000;} /* When hovering over any anchor tag, it will change into black dynamite */
 .tabn a:hover { color: #fff;}
-body { background: url('imgs/wall4.png') repeat;}
+body { background: url('imgs/wall4.png') repeat; width: 100%;}
 #login_cont { width: 100%; margin: 0 auto;}
 #login { float: left; width: 90%; padding: 20px 5% 0px;}
 #login div { overflow: hidden; width: 100%; float: left; margin: 0px 0px 0px 0px;}
@@ -24,9 +24,9 @@ body { background: url('imgs/wall4.png') repeat;}
 #login div.response { margin: 3px; background: #F7C7AC; width: 91%; padding: 8px 9px 8px 12px;}
 #login .loader { margin-left: 47%;}
 h1 {
-font-family: 'Lato', sans-serif; 
-width: auto; font-size: 31px;
-font-weight:200; text-align: center;
+	font-family: 'Lato', arial, sans-serif; 
+	width: auto; font-size: 31px;
+	font-weight:200; text-align: center;
 }
 
 .nav {
@@ -68,7 +68,9 @@ font-size: 30px; text-align: center;
 }
 .votep .arrow-top { float: left; margin-top:-10px; margin-left: 23%;}
 
-.profile {}
+.profile {
+	color: #FFFFFF;
+}
 .profile img {
 	width: 50%;
 	float: left;
