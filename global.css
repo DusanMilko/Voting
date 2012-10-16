@@ -85,6 +85,7 @@ font-size: 30px; text-align: center;
             position: absolute;  
         } 
 .button {
+	max-width: 95px;
 	display: inline-block;
 	outline: none;
 	cursor: pointer;
@@ -127,6 +128,21 @@ font-size: 30px; text-align: center;
 	background: -moz-linear-gradient(top,  #f47a20,  #faa51a);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#f47a20', endColorstr='#faa51a');
 }
+.resultfull { max-height: 200px; float: left; width: 90%; margin: 10px 5% 0px;}
+.resultfull img { width: 15%; float: left;}
+.resultfull .poo {  margin: 7% 0px 0%; background: #eee; height: 100%; width: 85%; float: right;}
+.resultfull span { overflow: hidden; line-height: 20px; text-overflow: ellipsis; font-weight: bold; color: #fff; width: 100%; height: 15px; padding: 10px 0px 10px; background: #222; display: block;text-align: center;}
+.resultfull.el span { margin-top: 10px;} 
+
+.vc { float: left; margin-top: 10px; font-weight: bold; background: #eee; text-align: center; padding: 10px 20px;}
+.pool { margin-top: 5px; float: left; padding: 2px; border: 1px solid #222;}
+.foo { float: left; width: 100%; background: #555; margin-top: 60px;
+	text-align: center; 
+}
+.foo a { float: left; width: 100%; padding: 10px 0px;}
+.foo a:hover { color: #fff;}
+
+
 
 
 

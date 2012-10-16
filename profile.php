@@ -42,8 +42,37 @@ $stmt->bind_result( $name, $imge, $descri );
 			<div class="profile">
 				<img src="<?php echo $imge;?>" />
 				<div class="pname"><?php echo $name;?></div>
+				
+				
+				<?php $tempu = $_SESSION['nm'];
+				$mysqlt = new mysqli('internal-db.s93477.gridserver.com','db93477_bot','troll1337','db93477_panther') or die('Error connecting to database');
+				$stmtt = $mysqlt->prepare('SELECT submit FROM voterid WHERE vid='.$tempu.'') or die("Problem with Query");
+				$stmtt->execute();
+				$stmtt->bind_result( $casted );
+				
+				while( $row = $stmtt->fetch()) :
+				
+					$checkcast = intval($casted);
+				
+				endwhile;
+				
+				if( $checkcast == 1 ){
+					$mysqltt = new mysqli('internal-db.s93477.gridserver.com','db93477_bot','troll1337','db93477_panther') or die('Error connecting to database');
+					$stmttt = $mysqltt->prepare('SELECT votes FROM election WHERE id='.$id.'') or die("Problem with Query");
+					$stmttt->execute();
+					$stmttt->bind_result( $votes );
+					
+					while( $row = $stmttt->fetch()) :
+					
+						echo '<div class="pool">This Candidate has '.$votes.' Votes</div>';
+					
+					endwhile;
+				}
+				?>
+				
+				
 				<div class="desc"><?php echo $descri;?></div>
-				<a class="button orange" href="">Cast Vote</a>
+				<a class="button orange" href="">Vote For <?php echo $name;?></a>
 			</div>
 			
 			<div class="nav">
@@ -69,7 +98,7 @@ $(document).ready(function(){
     });  
     var ajax_load = "<img class='hid loader' src='imgs/ajax-loader.gif' alt='loading...' />"; 
 	$(".profile a").click(function(){
-    	var loadUrl = "castvote.php?cand="+<?php echo $id;?>+"&user="+<?php echo $_SESSION['nm'];?>;
+    	var loadUrl = "castvote.php?cand=<?php echo $id;?>&user=<?php echo $_SESSION['nm'];?>";
         $("#result").html(ajax_load).load(loadUrl); 
         return false;
     });

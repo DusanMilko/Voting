@@ -41,6 +41,8 @@ else {}
 			</div> 
 
 			<input type="submit" id="send" value="Log In" name="submit" />
+			
+			<span class="foo"><a href="results.php">Public Results Url</a></span>
 	</form>
 	
 	</div> 

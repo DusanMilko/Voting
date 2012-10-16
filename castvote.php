@@ -32,14 +32,23 @@ if( $checkcast == 0 ){
 	$mysqlo = new mysqli('internal-db.s93477.gridserver.com','db93477_bot','troll1337','db93477_panther') or die('Error connecting to database');
 	$stmto = $mysqlo->prepare('UPDATE election SET votes='.$newvotes.' WHERE id='.$ucan.'') or die("Problem with Query");
 	$stmto->execute();
+	while( $row = $stmto->fetch()) :
+	endwhile;
 	
 	$mysqlp = new mysqli('internal-db.s93477.gridserver.com','db93477_bot','troll1337','db93477_panther') or die('Error connecting to database');
 	$stmtp = $mysqlp->prepare('UPDATE voterid SET submit='.$voted.' WHERE vid='.$uid.'') or die("Problem with Query");
 	$stmtp->execute();
-	echo $voted;
-	echo $uid;
+	while( $row = $stmtp->fetch()) :
+	endwhile;
+	echo "<span class='vc'>Vote Casted</span>";
+	echo '<script>function leave() {window.location.href = "results.php";}
+setTimeout("leave()", 2000);</script>';
 }
 else{
-	echo "You Have Already Voted!";
+	echo "<span class='vc'>You Already Voted!</span>";
+	//sleep(5);
+	echo '<script>function leave() {window.location.href = "results.php";}
+setTimeout("leave()", 2000);</script>';
 }
+
 ?>
