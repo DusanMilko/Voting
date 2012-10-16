@@ -40,6 +40,6 @@ if( $checkcast == 0 ){
 	echo $uid;
 }
 else{
-	echo "Already Voted";
+	echo "You Have Already Voted!";
 }
 ?>
